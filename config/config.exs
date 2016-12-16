@@ -10,3 +10,7 @@ use Mix.Config
 # Uncomment to use target specific configurations
 
 # import_config "#{Mix.Project.config[:target]}.exs"
+
+# config for Raspberry Pi A+ / B+ / B / Zero (target rpi)
+config :led_nerves, led_list: [ :red, :green ]
+config :nerves_leds, names: [ red: "led0", green: "led1" ]

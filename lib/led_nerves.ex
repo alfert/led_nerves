@@ -6,6 +6,8 @@ defmodule LedNerves do
   def start(_type, _args) do
     import Supervisor.Spec, warn: false
 
+    Blinky.start(:what_ever, :what_ever)
+
     # Define workers and child supervisors to be supervised
     children = [
       # worker(LedNerves.Worker, [arg1, arg2, arg3]),
