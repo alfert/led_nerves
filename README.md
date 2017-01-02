@@ -1,5 +1,8 @@
 # LedNerves
 
+The configuration of WiFi is mostly taken directly from https://github.com/amolenaar/elixir-brewberry-pi
+
+
 To start your Nerves app:
 
   * Install dependencies with `mix deps.get`
