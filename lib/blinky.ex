@@ -8,12 +8,12 @@ defmodule Blinky do
   """
 
   @on_duration  400 # ms
-  @off_duration 100 # ms
+  @off_duration 400 # ms
 
   alias Nerves.Leds
   require Logger
 
-  def start(_type, _args) do
+  def blink() do
     led_list = Application.get_env(:led_nerves, :led_list)
     Logger.debug "LED NERVES"
     Logger.debug "list of leds to blink is #{inspect led_list}"
