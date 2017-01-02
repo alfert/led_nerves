@@ -14,3 +14,7 @@ use Mix.Config
 # config for Raspberry Pi A+ / B+ / B / Zero (target rpi)
 config :led_nerves, led_list: [ :red, :green ]
 config :nerves_leds, names: [ red: "led0", green: "led1" ]
+
+config :nerves, :firmware,
+  rootfs_additions: "config/rootfs-additions"
+
