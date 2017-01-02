@@ -11,8 +11,11 @@ defmodule LedNerves do
     import Supervisor.Spec, warn: false
 
     configure_wlan()
-    Blinky.blink()
+    network_time()
 
+    Blinky.blink()
+    Logger.debug "Current time is: #{DateTime.utc_now() |> DateTime.to_string}"
+    
     # Define workers and child supervisors to be supervised
     children = [
       # worker(LedNerves.Worker, [arg1, arg2, arg3]),
@@ -41,4 +44,7 @@ defmodule LedNerves do
     # Nerves.InterimWiFi.setup(@wlan_interface |> Atom.to_string(), opts)
   end
 
+  def network_time() do
+     System.cmd("/usr/sbin/ntpd", ["-g"])
+  end
 end
