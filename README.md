@@ -2,6 +2,7 @@
 
 The configuration of WiFi is mostly taken directly from https://github.com/amolenaar/elixir-brewberry-pi
 
+My adapted nerves Raspberry setup is here: https://github.com/alfert/nerves_system_rpi
 
 To start your Nerves app:
 
