@@ -1,5 +1,6 @@
 defmodule LedNerves do
   use Application
+  alias Nerves.Networking
 
   require Logger
   @wlan_interface :wlan0
@@ -30,7 +31,7 @@ defmodule LedNerves do
     Logger.debug "modprobe the wifi module"
     System.cmd("/sbin/modprobe", ["8192cu"])
     :timer.sleep(250)
-    res = System.cmd("/sbin/lsmod")
+    res = System.cmd("/sbin/lsmod", [])
     Logger.debug "output of lsmod: #{inspect res}"
 
     System.cmd("/usr/sbin/wpa_supplicant", ["-s", "-B",
@@ -39,7 +40,7 @@ defmodule LedNerves do
          "-c", "/etc/wpa_supplicant.conf"])
      :timer.sleep(500)
 
-     Networking.setup @wlan_interface
+     Networking.setup(@wlan_interface)
 
     # Nerves.InterimWiFi.setup "wlan0", opts
     # Logger.debug "WLAN opts: #{inspect opts}"
