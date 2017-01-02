@@ -22,7 +22,7 @@ defmodule LedNerves.Mixfile do
   def application do
     [mod: {LedNerves, []},
      applications: [:logger,
-      #  :nerves_interim_wifi,
+      # :nerves_interim_wifi,
       :nerves_networking,
       :nerves_leds, :nerves]]
   end
@@ -31,7 +31,7 @@ defmodule LedNerves.Mixfile do
     [
       {:nerves, "~> 0.4.0"},
       {:nerves_leds, "~> 0.7.0"},
-      # {:nerves_interim_wifi, "~> 0.1.0"}
+      # {:nerves_interim_wifi, "~> 0.1.0"},
       {:nerves_networking, "~> 0.6.0"}
     ]
   end
